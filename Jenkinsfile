@@ -19,7 +19,7 @@ stage ('Build')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/pipelineproject/spring-microservices ; mvn clean install " 
+       sh "/home/ubuntu/workspace/pipelineproject/spring-microservices ; mvn clean install " 
     }
 }
 
@@ -28,16 +28,16 @@ stage ('dockerimageBuild')
     {
     steps
     {
-        sh "cd /home/ubuntu/workspace/pipelineproject/spring-microservices ; sudo docker build -t spring-microservices . " 
+        sh "/home/ubuntu/workspace/pipelineproject/spring-microservices ; sudo docker build -t spring-microservices . " 
     }
 }
      stage ('dockerimagepush ') 
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo  docker login -urajender17 -pRajender@340 "
-        sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker tag spring-microservices rajender17/account-service "
-        sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker push rajender17/spring-microservices  "
+       sh "/home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo  docker login -urajender17 -pRajender@340 "
+        sh "/home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker tag spring-microservices rajender17/account-service "
+        sh "/home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker push rajender17/spring-microservices  "
         
         
     }
