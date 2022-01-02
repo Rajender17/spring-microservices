@@ -19,7 +19,7 @@ stage ('Build')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/ pipeline project/account-service ; mvn clean install " 
+       sh "cd /home/ubuntu/workspace/pipelineproject/account-service ; mvn clean install " 
     }
 }
 
@@ -28,16 +28,16 @@ stage ('dockerimageBuild')
     {
     steps
     {
-        sh "cd /home/ubuntu/workspace/ pipeline project/account-service; sudo docker build -t account-service . " 
+        sh "cd /home/ubuntu/workspace/pipelineproject/account-service; sudo docker build -t account-service . " 
     }
 }
      stage ('dockerimagepush ') 
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/ pipeline project/account-service ; sudo  docker login -urajender17 -pRajender@340 "
-        sh "cd /home/ubuntu/workspace/ pipeline project/account-service ; sudo docker tag account-service rajender17/account-service "
-        sh "cd /home/ubuntu/workspace/ pipeline project/account-service ; sudo docker push rajender17/account-service  "
+       sh "cd /home/ubuntu/workspace/ pipelineproject/account-service ; sudo  docker login -urajender17 -pRajender@340 "
+        sh "cd /home/ubuntu/workspace/ pipelineproject/account-service ; sudo docker tag account-service rajender17/account-service "
+        sh "cd /home/ubuntu/workspace/ pipelineproject/account-service ; sudo docker push rajender17/account-service  "
         
         
     }
