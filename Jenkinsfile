@@ -36,7 +36,7 @@ stage ('dockerimageBuild')
     steps
     {
        sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo  docker login -urajender17 -pRajender@340 "
-        sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker tag spring-microservices rajender17/account-service "
+        sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker tag spring-microservices rajender17/spring-microservices "
         sh "cd /home/ubuntu/workspace/ pipelineproject/spring-microservices ; sudo docker push rajender17/spring-microservices  "
         
         
